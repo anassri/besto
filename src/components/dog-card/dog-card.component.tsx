@@ -39,7 +39,7 @@ export const DogCard: FunctionComponent<DogCardProps> = ({
     };
     return (
         <Card
-            className={`w-full max-w-full md:max-w-[48%] lg:max-w-[350px] ${
+            className={`w-full max-w-full md:max-w-[48%] lg:min-w-[300px] lg:w-[32%] ${
                 isDogFavorited ? "box-border border-1 border-[#d32f2f]" : ""
             }`}
         >
@@ -50,7 +50,7 @@ export const DogCard: FunctionComponent<DogCardProps> = ({
                 width="350"
                 image={dog.img}
                 alt={`${dog.name} the dog`}
-                className="h-[230px] max-w-fullmd:max-w-[48%] lg:max-w-[350px]"
+                className="h-[230px] max-w-full lg:max-w-[350px]"
             />
             <CardContent>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
