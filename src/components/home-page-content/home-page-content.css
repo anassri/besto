@@ -1,7 +1,5 @@
-@media screen and (max-width: 480px) {
-    .css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar {
-        flex-wrap: wrap;
-        padding-left: 0;
-        justify-content: center;
-    }
+.css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar {
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: center;
 }

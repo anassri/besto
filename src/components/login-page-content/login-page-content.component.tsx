@@ -11,7 +11,6 @@ import { Footer } from "../footer/footer.component";
 import { Logo } from "../logo/logo.component";
 
 export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
-    setErrorAlertOpen,
     setErrorMessages,
 }) => {
     const { logIn, loading, error: requestErrors } = useAuth();
@@ -92,11 +91,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
                         </Button>
                     </form>
                 </Paper>
-                <Footer
-                    setErrorAlertOpen={setErrorAlertOpen}
-                    setErrorMessages={setErrorMessages}
-                    hideLogoutButton
-                />
+                <Footer setErrorMessages={setErrorMessages} hideLogoutButton />
             </div>
         </main>
     );

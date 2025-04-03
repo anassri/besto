@@ -64,7 +64,7 @@ export const HomePageContent: FunctionComponent<HomePageContentProps> = ({
                         />
                     ))
                 ) : (
-                    <div className="flex flex-col items-center justify-center text-center w-full lg:w-[600px] h-[65vh] md:h-[68vh] lg:h-none">
+                    <div className="flex flex-col gap-y-2 items-center justify-center text-center w-full lg:w-[600px] h-[65vh] md:h-[68vh] lg:h-none">
                         <Typography
                             variant="h2"
                             fontWeight={700}
@@ -72,7 +72,16 @@ export const HomePageContent: FunctionComponent<HomePageContentProps> = ({
                             fontSize={36}
                             className="self-center"
                         >
-                            No dogs found
+                            No dogs found :-(
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            fontWeight={400}
+                            color="textDisabled"
+                            fontSize={20}
+                            className="self-center"
+                        >
+                            Try changing your search criteria
                         </Typography>
                     </div>
                 )}

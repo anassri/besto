@@ -18,10 +18,7 @@ import { dogSearchReducer } from "../reducers/search.reducers";
 import { type Dog } from "../types/dog.types";
 import { GeneralErrorProps } from "../types/general.types";
 
-const Home: FunctionComponent<GeneralErrorProps> = ({
-    setErrorAlertOpen,
-    setErrorMessages,
-}) => {
+const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
     const { search, searchData, searchLoading, searchError, dogs } =
         useSearchDogs();
     const {
@@ -94,19 +91,16 @@ const Home: FunctionComponent<GeneralErrorProps> = ({
             setErrorMessages((prevState) =>
                 determineErrorsList(prevState, searchError)
             );
-            setErrorAlertOpen(true);
         }
         if (dogMatchError) {
             setErrorMessages((prevState) =>
                 determineErrorsList(prevState, dogMatchError)
             );
-            setErrorAlertOpen(true);
         }
         if (dogBreedsError) {
             setErrorMessages((prevState) =>
                 determineErrorsList(prevState, dogBreedsError)
             );
-            setErrorAlertOpen(true);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dogMatchError, dogBreedsError, searchError]);
@@ -209,10 +203,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({
                     )}
                 </div>
             )}
-            <Footer
-                setErrorAlertOpen={setErrorAlertOpen}
-                setErrorMessages={setErrorMessages}
-            />
+            <Footer setErrorMessages={setErrorMessages} />
         </div>
     );
 };
