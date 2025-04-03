@@ -71,6 +71,15 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
         zipCodes
     );
 
+    const onResetFormClick = () => {
+        dispatch({ type: "SET_AGE_MAX", payload: 15 });
+        dispatch({ type: "SET_AGE_MIN", payload: 0 });
+        dispatch({ type: "SET_BREEDS", payload: [] });
+        dispatch({ type: "SET_FROM", payload: 1 });
+        dispatch({ type: "SET_SIZE", payload: 25 });
+        onResetForm();
+    };
+
     useEffect(() => {
         if (selectedBreeds.length === 0) {
             onResetForm();
@@ -143,7 +152,7 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
 
                 <SearchActions
                     shouldDisableApplyButton={shouldDisableApplyButton}
-                    onResetForm={onResetForm}
+                    onResetForm={onResetFormClick}
                 />
             </form>
         </div>

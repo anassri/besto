@@ -112,7 +112,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
 
     return (
         <div
-            className={`flex flex-col items-center ${
+            className={`flex flex-col items-center justify-between ${
                 dogMatchData ? "h-screen" : "h-full"
             } gap-y-2 lg:gap-y-8 relative`}
             style={{
@@ -150,7 +150,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
                     dog={dogMatchData}
                 />
             ) : (
-                <div className="flex flex-col lg:flex-row justify-center p-4 pt-2 lg:pt-4 pb-0 gap-x-4 gap-y-2 lg:gap-y-0 w-full lg:w-auto">
+                <div className="flex flex-col lg:flex-row justify-center p-4 pt-2 lg:pt-4 pb-0 gap-x-4 gap-y-2 lg:gap-y-0 w-full h-full lg:w-auto">
                     {openFavoriteMenu && !isMedium && !isLarge && (
                         <MatchWidget
                             favoriteDogs={favoriteDogs}

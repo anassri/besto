@@ -43,7 +43,7 @@ export const HomePageContent: FunctionComponent<HomePageContentProps> = ({
     }, [dogs]);
 
     return (
-        <div className="flex flex-col gap-y-8 justify-between lg:max-w-[616px] h-[70vh] md:h-[72vh] lg:h-none">
+        <div className="flex flex-col gap-y-8 justify-between lg:max-w-[616px]">
             <div className="flex flex-wrap gap-4 md:justify-center lg:justify-start items-center w-full">
                 {isloading ? (
                     <DogCardSkeleton />
@@ -64,7 +64,7 @@ export const HomePageContent: FunctionComponent<HomePageContentProps> = ({
                         />
                     ))
                 ) : (
-                    <div className="flex flex-col gap-y-2 items-center justify-center text-center w-full lg:w-[600px]">
+                    <div className="flex flex-col gap-y-2 items-center text-center w-full h-[61vh] md:h-[65vh] lg:h-none">
                         <Typography
                             variant="h2"
                             fontWeight={700}
