@@ -51,7 +51,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
                     "linear-gradient(to right bottom, #ffffff, #f5f5f5, #ebebeb, #e1e1e1, #d7d7d7)",
             }}
         >
-            <div className="flex flex-col gap-y-4 items-center w-full px-4 md:max-w-lg pt-24">
+            <div className="flex flex-col gap-y-4 items-center w-full px-4 md:max-w-lg">
                 <Logo />
                 <Paper elevation={3} className="w-full">
                     <form

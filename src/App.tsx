@@ -36,7 +36,6 @@ function App() {
     const resetErrorMessages = () => {
         setErrorMessages([]);
     };
-    console.log("errorMessages", errorMessages);
     return (
         <ThemeProvider theme={theme}>
             {errorMessages.length > 0 && (
