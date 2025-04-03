@@ -4,7 +4,7 @@ import { type FunctionComponent } from "react";
 export const DogCardSkeleton: FunctionComponent = () => {
     return new Array(9).fill({}).map((_value, idx) => (
         <Card
-            className="flex flex-col gap-y-4 py-4 w-full md:w-[350px]"
+            className="flex flex-col gap-y-4 py-4 w-full md:max-w-[48%] lg:min-w-[300px] lg:w-[32%]"
             key={idx}
         >
             <div className="px-4 flex flex-col gap-y-3">
