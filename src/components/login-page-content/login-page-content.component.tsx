@@ -6,9 +6,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth.hooks";
 import type { LoginInputs } from "../../types/auth.types";
+import { GeneralErrorProps } from "../../types/general.types";
 import { Footer } from "../footer/footer.component";
 import { Logo } from "../logo/logo.component";
-import { GeneralErrorProps } from "../../types/general.types";
 
 export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
     setErrorAlertOpen,
@@ -95,6 +95,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
                 <Footer
                     setErrorAlertOpen={setErrorAlertOpen}
                     setErrorMessages={setErrorMessages}
+                    hideLogoutButton
                 />
             </div>
         </main>
