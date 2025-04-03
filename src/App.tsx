@@ -64,7 +64,15 @@ function App() {
                             />
                         }
                     />
-                    <Route path="/login" Component={Login} />
+                    <Route
+                        path="/login"
+                        element={
+                            <Login
+                                setErrorAlertOpen={setErrorAlertOpen}
+                                setErrorMessages={setErrorMessages}
+                            />
+                        }
+                    />
                 </Routes>
             </Router>
         </ThemeProvider>

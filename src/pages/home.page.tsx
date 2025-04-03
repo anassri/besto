@@ -200,7 +200,10 @@ const Home: FunctionComponent<GeneralErrorProps> = ({
                     )}
                 </div>
             )}
-            <Footer />
+            <Footer
+                setErrorAlertOpen={setErrorAlertOpen}
+                setErrorMessages={setErrorMessages}
+            />
         </div>
     );
 };

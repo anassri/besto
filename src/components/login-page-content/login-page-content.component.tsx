@@ -8,8 +8,12 @@ import { useAuth } from "../../hooks/auth.hooks";
 import type { LoginInputs } from "../../types/auth.types";
 import { Footer } from "../footer/footer.component";
 import { Logo } from "../logo/logo.component";
+import { GeneralErrorProps } from "../../types/general.types";
 
-export const LoginPageContent: FunctionComponent = () => {
+export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
+    setErrorAlertOpen,
+    setErrorMessages,
+}) => {
     const { logIn, loading, errors: requestErrors } = useAuth();
     const {
         register,
@@ -88,7 +92,10 @@ export const LoginPageContent: FunctionComponent = () => {
                         </Button>
                     </form>
                 </Paper>
-                <Footer />
+                <Footer
+                    setErrorAlertOpen={setErrorAlertOpen}
+                    setErrorMessages={setErrorMessages}
+                />
             </div>
         </main>
     );
