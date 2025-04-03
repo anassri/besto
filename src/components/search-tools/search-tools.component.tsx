@@ -88,7 +88,7 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
                 className="flex flex-col gap-y-8 bg-[#f7f7f7] p-4 min-w-xs h-fit rounded-lg border border-gray-200"
             >
                 <SearchSort dispatch={dispatch} sort={sort} setSort={setSort} />
-                <div className="max-w-[97%] lg:max-w-[260px]">
+                <div className="max-w-[97%]">
                     <Typography gutterBottom fontWeight={700}>
                         Age
                     </Typography>
