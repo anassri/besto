@@ -7,7 +7,10 @@ import { Logo } from "../components/logo/logo.component";
 import { MatchContent } from "../components/match-content/match-content.component";
 import { MatchWidget } from "../components/match-widget/match-widget.component";
 import { SearchToolsContainer } from "../components/search-tools/search-tools.component";
-import { scrollToElement } from "../helpers/general.helpers";
+import {
+    determineErrorsList,
+    scrollToElement,
+} from "../helpers/general.helpers";
 import { resetMatch } from "../helpers/home.helpers";
 import { useBreakpoints } from "../hooks/breakpoints.hooks";
 import { useDogMatch, useDogsBreeds, useSearchDogs } from "../hooks/dogs.hooks";
@@ -19,18 +22,18 @@ const Home: FunctionComponent<GeneralErrorProps> = ({
     setErrorAlertOpen,
     setErrorMessages,
 }) => {
-    const { search, searchData, searchLoading, searchErrors, dogs } =
+    const { search, searchData, searchLoading, searchError, dogs } =
         useSearchDogs();
     const {
         getBreeds,
         data: dogBreedsData,
-        errors: dogBreedsErrors,
+        errors: dogBreedsError,
         loading: dogBreedsLoading,
     } = useDogsBreeds();
     const {
         getMatch,
         loading: dogMatchLoading,
-        errors: dogMatchErrors,
+        error: dogMatchError,
         data: dogMatchData,
         resetData: resetDogMatchData,
     } = useDogMatch();
@@ -87,20 +90,26 @@ const Home: FunctionComponent<GeneralErrorProps> = ({
     }, [openFilterMenu, openFavoriteMenu]);
 
     useEffect(() => {
-        if (searchErrors) {
-            setErrorMessages((prevState) => [...prevState, searchErrors]);
+        if (searchError) {
+            setErrorMessages((prevState) =>
+                determineErrorsList(prevState, searchError)
+            );
             setErrorAlertOpen(true);
         }
-        if (dogMatchErrors) {
-            setErrorMessages((prevState) => [...prevState, dogMatchErrors]);
+        if (dogMatchError) {
+            setErrorMessages((prevState) =>
+                determineErrorsList(prevState, dogMatchError)
+            );
             setErrorAlertOpen(true);
         }
-        if (dogBreedsErrors) {
-            setErrorMessages((prevState) => [...prevState, dogBreedsErrors]);
+        if (dogBreedsError) {
+            setErrorMessages((prevState) =>
+                determineErrorsList(prevState, dogBreedsError)
+            );
             setErrorAlertOpen(true);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dogMatchErrors, dogBreedsErrors, searchErrors]);
+    }, [dogMatchError, dogBreedsError, searchError]);
 
     const getMatchData = () => {
         const dogIds = favoriteDogs.map((dog) => dog.id);

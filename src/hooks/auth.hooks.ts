@@ -5,7 +5,7 @@ import type { LoginInputs } from "../types/auth.types";
 
 export const useAuth = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [errors, setErrors] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
 
     const logIn = async (data: LoginInputs): Promise<void | string> => {
@@ -13,13 +13,13 @@ export const useAuth = () => {
             setLoading(true);
             const response = await fetchData("/auth/login", "POST", data);
             if (response.status !== 200) {
-                setErrors("An error has occurred");
+                setError("An error has occurred");
             }
             setLoading(false);
             return;
         } catch (error) {
             setLoading(false);
-            setErrors(error as string);
+            setError(error as string);
         }
     };
 
@@ -30,12 +30,12 @@ export const useAuth = () => {
             if (response.status === 200) {
                 navigate("/login");
             } else {
-                setErrors("An error has occurred");
+                setError("An error has occurred");
             }
             setLoading(false);
         } catch (error) {
             setLoading(false);
-            setErrors(error as string);
+            setError(error as string);
         }
     };
 
@@ -43,6 +43,6 @@ export const useAuth = () => {
         logIn,
         logOut,
         loading,
-        errors,
+        error,
     };
 };

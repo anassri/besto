@@ -11,22 +11,22 @@ import { useResolveQueryResponse } from "./common.hooks";
 
 export const useSearchDogs = () => {
     const [searchLoading, setSearchLoading] = useState<boolean>(false);
-    const [searchErrors, setSearchErrors] = useState<string | null>(null);
+    const [searchError, setSearchError] = useState<string | null>(null);
     const [searchData, setSearchData] = useState<DogSearchResponse | null>(
         null
     );
     const resolveResponse = useResolveQueryResponse<DogSearchResponse>(
-        setSearchErrors,
+        setSearchError,
         setSearchData
     );
 
-    const { getDogs, errors, data } = useDogs();
+    const { getDogs, error, data } = useDogs();
 
     useEffect(() => {
-        if (errors) {
-            setSearchErrors(errors);
+        if (error) {
+            setSearchError(error);
         }
-    }, [errors]);
+    }, [error]);
 
     useEffect(() => {
         setSearchLoading(false);
@@ -64,7 +64,7 @@ export const useSearchDogs = () => {
     return {
         search,
         searchLoading,
-        searchErrors,
+        searchError,
         searchData,
         dogs: data,
     };
@@ -101,9 +101,9 @@ export const useDogsBreeds = () => {
 
 export const useDogs = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [errors, setErrors] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<Dog[]>([]);
-    const resolveResponse = useResolveQueryResponse<Dog[]>(setErrors, setData);
+    const resolveResponse = useResolveQueryResponse<Dog[]>(setError, setData);
 
     const getDogs = async (dogIds: string[]): Promise<void> => {
         setLoading(true);
@@ -120,23 +120,23 @@ export const useDogs = () => {
     return {
         getDogs,
         loading,
-        errors,
+        error,
         data,
     };
 };
 
 export const useDogMatch = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [errors, setErrors] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<Match | null>(null);
     const [match, setMatch] = useState<Dog | null>(null);
-    const resolveResponse = useResolveQueryResponse<Match>(setErrors, setData);
+    const resolveResponse = useResolveQueryResponse<Match>(setError, setData);
 
-    const { getDogs, errors: dogsErrors, data: dogsData } = useDogs();
+    const { getDogs, error: dogsErrors, data: dogsData } = useDogs();
 
     useEffect(() => {
         if (dogsErrors) {
-            setErrors(dogsErrors);
+            setError(dogsErrors);
         }
     }, [dogsErrors]);
 
@@ -175,7 +175,7 @@ export const useDogMatch = () => {
     return {
         getMatch,
         loading,
-        errors,
+        error,
         data: match,
         resetData,
     };

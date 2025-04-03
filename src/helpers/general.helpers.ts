@@ -43,3 +43,11 @@ export function scrollToElement(id: string, headerOffset = 30) {
         window.scrollTo(0, offsetPosition);
     }
 }
+
+export const determineErrorsList = (prevState: string[], error: string) => {
+    if (prevState.includes(error)) {
+        return prevState;
+    } else {
+        return [...prevState, error];
+    }
+};

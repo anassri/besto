@@ -14,7 +14,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
     setErrorAlertOpen,
     setErrorMessages,
 }) => {
-    const { logIn, loading, errors: requestErrors } = useAuth();
+    const { logIn, loading, error: requestErrors } = useAuth();
     const {
         register,
         handleSubmit,

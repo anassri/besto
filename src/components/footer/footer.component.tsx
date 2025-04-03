@@ -7,15 +7,15 @@ import { GeneralErrorProps } from "../../types/general.types";
 export const Footer: FunctionComponent<
     GeneralErrorProps & { hideLogoutButton?: boolean }
 > = ({ setErrorAlertOpen, setErrorMessages, hideLogoutButton = false }) => {
-    const { logOut, errors, loading } = useAuth();
+    const { logOut, error, loading } = useAuth();
 
     useEffect(() => {
-        if (errors) {
-            setErrorMessages((prevState) => [...prevState, errors]);
+        if (error) {
+            setErrorMessages((prevState) => [...prevState, error]);
             setErrorAlertOpen(true);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [errors]);
+    }, [error]);
 
     return (
         <div className="mb-8 self-center flex flex-col items-center">
