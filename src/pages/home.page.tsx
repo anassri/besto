@@ -112,7 +112,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
 
     return (
         <div
-            className={`flex flex-col items-center justify-between ${
+            className={`flex flex-col items-center ${
                 dogMatchData ? "h-screen" : "h-full"
             } gap-y-2 lg:gap-y-8 relative`}
             style={{
