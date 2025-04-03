@@ -1,6 +1,6 @@
 # Welcome to Besto!
 
-It's time to find your best friend! Use this app to filter through dogs and select your favorites. The app will then find a match for you. You can also filter results and sort them. Additionally, this app is fully responsive.
+It's time to find your best friend! Use this app to filter through dogs and select your favorites. The app will then find a match for you. You can also filter results and sort them. Additionally, this app is fully responsive. You'll need to login with a name and an email. The app also features graceful error handling.
 
 This app has been created for Fetch. Checkout the app live at [https://besto-five.vercel.app/](https://besto-five.vercel.app/)
 
