@@ -64,12 +64,12 @@ function App() {
             <Router>
                 <Routes>
                     <Route
-                        path="/"
-                        element={<Home setErrorMessages={setErrorMessages} />}
-                    />
-                    <Route
                         path="/login"
                         element={<Login setErrorMessages={setErrorMessages} />}
+                    />
+                    <Route
+                        path="/"
+                        element={<Home setErrorMessages={setErrorMessages} />}
                     />
                 </Routes>
             </Router>
