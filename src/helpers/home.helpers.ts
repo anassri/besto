@@ -46,7 +46,7 @@ export const resetMatch = (
     dispatch({ type: "SET_BREEDS", payload: [] });
     dispatch({ type: "SET_FROM", payload: 1 });
     dispatch({ type: "SET_SIZE", payload: 25 });
-    dispatch({ type: "SET_SORT", payload: "" });
+    dispatch({ type: "SET_SORT", payload: "breed:asc" });
     setFavoriteDogs([]);
     setOpenFavoriteMenu(false);
     setOpenFilterMenu(false);
