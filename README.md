@@ -1,4 +1,4 @@
-<div id="user-content-toc" style="text-align:center"><img src="./src//assets/logo-small.png" />
+<div id="user-content-toc" align="center"><img src="./src//assets/logo-small.png" />
     <h1 style="font-size:48px;">Besto</h1>
     <h3 style="font-size:16px;font-weight:400;">Let's find your best friend!</h3>
 </div>
@@ -54,4 +54,4 @@ One thing I've noticed when testing the app on Safari for mac and ios, and chrom
 
 As a quick temporary way to view the website on mobile and desktop Safari. Go to settings, then privacy, then uncheck `Prevent cross-site tracking`, that should let the browser save the cookie.
 
-<h3 style="font-size:24px;text-align:center;">Thanks for checking the app out!</h3>
+<h3 style="font-size:24px;" align="center">Thanks for checking the app out!</h3>
