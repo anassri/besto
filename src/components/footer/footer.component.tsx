@@ -27,7 +27,7 @@ export const Footer: FunctionComponent<
                     onClick={() =>
                         setErrorMessages((prevState) => [
                             ...prevState,
-                            "Hello there! You found me. I am an error message.",
+                            "Never gonna give you up, never gonna let you down. Never gonna run around and desert you!",
                         ])
                     }
                 >

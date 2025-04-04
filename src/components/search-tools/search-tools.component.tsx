@@ -77,6 +77,7 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
         dispatch({ type: "SET_BREEDS", payload: [] });
         dispatch({ type: "SET_FROM", payload: 1 });
         dispatch({ type: "SET_SIZE", payload: 25 });
+        dispatch({ type: "SET_ZIPCODES", payload: [] });
         onResetForm();
     };
 

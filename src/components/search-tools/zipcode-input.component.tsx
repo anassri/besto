@@ -26,7 +26,7 @@ export const ZipcodeInput: FunctionComponent<ZipcodeInputProps> = ({
     dispatch,
 }) => {
     return (
-        <div className="flex flex-col mt-[-25px]">
+        <div className="flex flex-col gap-y-2 mt-[-25px]">
             <FormControl sx={{ m: 1, minWidth: 270 }} variant="standard">
                 <InputLabel htmlFor="standard-adornment-search-by-zip-code">
                     Filter by Zip Code

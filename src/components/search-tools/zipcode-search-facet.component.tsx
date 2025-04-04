@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
-import { FunctionComponent } from "react";
+import { type FunctionComponent } from "react";
 
 type ZipcodeSearchFacetProps = {
     onChange: () => void;
@@ -11,7 +11,7 @@ export const ZipcodeSearchFacet: FunctionComponent<ZipcodeSearchFacetProps> = ({
     zipCode,
 }) => {
     return (
-        <div className="flex justify-between items-center border border-gray-300 pr-1 pl-4 rounded-full bg-gray-200">
+        <div className="flex justify-between items-center border border-[#d7d7d7] pr-1 pl-4 rounded-full bg-[#ebebeb]">
             {zipCode}
             <IconButton aria-label="remove zip code" onClick={onChange}>
                 <CloseIcon />

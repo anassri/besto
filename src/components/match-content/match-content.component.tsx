@@ -21,7 +21,7 @@ export const MatchContent: FunctionComponent<MatchContentProps> = ({
     }, []);
 
     return (
-        <section className="flex flex-col h-full w-full lg:w-auto px-4 lg:px-0 pt-4 lg:pt-0">
+        <section className="flex flex-col w-full lg:w-auto px-4 lg:px-0 pt-4 lg:pt-0">
             <Paper
                 elevation={3}
                 className="flex flex-col lg:flex-row items-center w-full max-w-full text-center lg:text-left p-6 lg:p-8"

@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import { FunctionComponent } from "react";
+import { type FunctionComponent } from "react";
 
 type SearchActionsProps = {
     onResetForm: () => void;

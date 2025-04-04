@@ -1,5 +1,5 @@
 import { TablePagination, Typography } from "@mui/material";
-import { FunctionComponent, useEffect, useState } from "react";
+import { type FunctionComponent, useEffect, useState } from "react";
 import {
     handleChangePage,
     handleChangeResultsPerPage,
@@ -64,7 +64,7 @@ export const HomePageContent: FunctionComponent<HomePageContentProps> = ({
                         />
                     ))
                 ) : (
-                    <div className="flex flex-col gap-y-2 items-center text-center w-full h-[61vh] md:h-[65vh] lg:h-none">
+                    <div className="flex flex-col gap-y-2 items-center text-center w-full py-8">
                         <Typography
                             variant="h2"
                             fontWeight={700}

@@ -8,13 +8,13 @@ export const useResolveQueryResponse = <T>(
 
     const resolveResponse = async (response: Response) => {
         if (response.status === 401) {
-            setErrors("Unauthorized");
+            setErrors("Unauthorized Access. Please Loging to continue.");
             navigate("/login");
         } else if (response.status === 200) {
             const body = await response.json();
             setData(body);
         } else {
-            setErrors("An error has occurred");
+            setErrors("An error has occurred. Please try again later.");
         }
     };
 

@@ -1,5 +1,5 @@
 import { FormControl, MenuItem, Select, Typography } from "@mui/material";
-import { FunctionComponent } from "react";
+import { type FunctionComponent } from "react";
 import { handleSortChange } from "../../helpers/search.helpers";
 import { DogsSearchAction } from "../../reducers/search.reducers";
 

@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useState, type FunctionComponent } from "react";
 import { useInView } from "react-intersection-observer";
+import { Background } from "../components/background/background.component";
 import { Footer } from "../components/footer/footer.component";
 import { HomeMobileHeader } from "../components/home-components/home-mobile-header.component";
 import { HomePageContent } from "../components/home-page-content/home-page-content.component";
@@ -115,10 +116,6 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
             className={`flex flex-col items-center justify-between ${
                 dogMatchData ? "h-screen" : "h-full"
             } gap-y-2 lg:gap-y-8 relative`}
-            style={{
-                backgroundImage:
-                    "linear-gradient(to right bottom, #ffffff, #f5f5f5, #ebebeb, #e1e1e1, #d7d7d7)",
-            }}
         >
             {isLarge ? (
                 <Logo />
@@ -204,6 +201,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
                 </div>
             )}
             <Footer setErrorMessages={setErrorMessages} />
+            <Background />
         </div>
     );
 };

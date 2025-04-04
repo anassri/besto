@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth.hooks";
 import type { LoginInputs } from "../../types/auth.types";
 import { GeneralErrorProps } from "../../types/general.types";
+import { Background } from "../background/background.component";
 import { Footer } from "../footer/footer.component";
 import { Logo } from "../logo/logo.component";
 
@@ -44,13 +45,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
             .catch((error) => console.error(error));
 
     return (
-        <main
-            className="flex justify-center h-screen w-full"
-            style={{
-                backgroundImage:
-                    "linear-gradient(to right bottom, #ffffff, #f5f5f5, #ebebeb, #e1e1e1, #d7d7d7)",
-            }}
-        >
+        <main className="flex justify-center w-full">
             <div className="flex flex-col gap-y-4 items-center w-full px-4 md:max-w-lg">
                 <Logo />
                 <Paper elevation={3} className="w-full">
@@ -93,6 +88,7 @@ export const LoginPageContent: FunctionComponent<GeneralErrorProps> = ({
                 </Paper>
                 <Footer setErrorMessages={setErrorMessages} hideLogoutButton />
             </div>
+            <Background />
         </main>
     );
 };

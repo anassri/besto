@@ -3,7 +3,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import IconButton from "@mui/material/IconButton";
-import { FunctionComponent } from "react";
+import { type FunctionComponent } from "react";
 import { Dog } from "../../types/dog.types";
 import { Logo } from "../logo/logo.component";
 
