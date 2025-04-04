@@ -33,6 +33,11 @@ function App() {
                     errorMessages={errorMessages}
                     setErrorMessages={setErrorMessages}
                     resetErrorMessages={resetErrorMessages}
+                    severity={
+                        errorMessages[0].includes("Never gonna give you up")
+                            ? "info"
+                            : "error"
+                    }
                 />
             )}
             <Router>
