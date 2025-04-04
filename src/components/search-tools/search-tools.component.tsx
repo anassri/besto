@@ -25,7 +25,7 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
     loading,
     data,
 }) => {
-    const [sort, setSort] = useState<string>("rel");
+    const [sort, setSort] = useState<string>("breed:asc");
     const [zipcode, setZipcode] = useState<string>("");
 
     const { control, register, handleSubmit, watch, reset } = useForm({

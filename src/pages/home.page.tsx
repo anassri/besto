@@ -8,6 +8,7 @@ import { Logo } from "../components/logo/logo.component";
 import { MatchContent } from "../components/match-content/match-content.component";
 import { MatchWidget } from "../components/match-widget/match-widget.component";
 import { SearchToolsContainer } from "../components/search-tools/search-tools.component";
+import { QUERY_INPUT_INITIAL_STATE } from "../constants/search.constants";
 import {
     determineErrorsList,
     scrollToElement,
@@ -36,7 +37,7 @@ const Home: FunctionComponent<GeneralErrorProps> = ({ setErrorMessages }) => {
         resetData: resetDogMatchData,
     } = useDogMatch();
     const [{ breeds, zipCodes, ageMax, ageMin, size, from, sort }, dispatch] =
-        useReducer(dogSearchReducer, {});
+        useReducer(dogSearchReducer, QUERY_INPUT_INITIAL_STATE);
 
     const [favoriteDogs, setFavoriteDogs] = useState<Dog[]>([]);
     const [openFilterMenu, setOpenFilterMenu] = useState<boolean>(false);

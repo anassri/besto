@@ -29,7 +29,6 @@ export const SearchSort: FunctionComponent<SearchSortProps> = ({
                 label="Age"
                 fullWidth
             >
-                <MenuItem value="rel">Relevance</MenuItem>
                 <MenuItem value={"breed:asc"}>Ascending: Breed</MenuItem>
                 <MenuItem value={"breed:desc"}>Descending: Breed</MenuItem>
                 <MenuItem value={"name:asc"}>Ascending: Name</MenuItem>
