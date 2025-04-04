@@ -1,6 +1,6 @@
 <div id="user-content-toc" align="center"><img src="./src//assets/logo-small.png" />
-    <h1 style="font-size:48px;">Besto</h1>
-    <h3 style="font-size:16px;font-weight:400;">Let's find your best friend!</h3>
+    <summary><h1 style="font-size:48px;">Besto</h1></summary>
+    <summary><h3 style="font-size:16px;font-weight:400;">Let's find your best friend!</h3></summary>
 </div>
 
 # Welcome to Besto!
