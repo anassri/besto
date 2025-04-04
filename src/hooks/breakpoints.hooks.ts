@@ -43,6 +43,6 @@ export function useBreakpoints(): Breakpoints {
             isNotSmall: isMedium || isLarge,
         };
     } else {
-        throw new Error("Breakpoints should not be used during SSR");
+        throw new Error("Window is not defined");
     }
 }
