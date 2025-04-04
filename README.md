@@ -1,7 +1,7 @@
 <div id="user-content-toc" align="center"><img src="./src//assets/logo-small.png" />
     <ul>
       <summary><h1 style="font-size:48px;padding:0;margin:0;">Besto</h1></summary>
-      <summary><h3 style="font-size:16px;font-weight:400;padding:0;margin:0;">Let's find your best friend!</h3></summary>
+      <summary><h3 style="font-size:16px;font-weight:400;padding:0;margin:0;color: gray;">Let's find your best friend!</h3></summary>
     </ul>
 </div>
 
