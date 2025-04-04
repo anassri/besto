@@ -2,6 +2,10 @@ import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { useEffect, type FunctionComponent } from "react";
+import {
+    determineIndefiniteArticle,
+    getAgeText,
+} from "../../helpers/general.helpers";
 import { useLocations } from "../../hooks/location.hooks";
 import { Dog } from "../../types/dog.types";
 
@@ -42,9 +46,10 @@ export const MatchContent: FunctionComponent<MatchContentProps> = ({
                             {dog.name}
                         </Typography>
                         <Typography variant="body1" color="primary">
-                            {dog.name} is a {dog.breed} and is{" "}
-                            {dog.age === 0 ? "a puppy" : `${dog.age} years old`}{" "}
-                            and resides in {data[0]?.city}, {data[0]?.state}.
+                            {dog.name} is{" "}
+                            {determineIndefiniteArticle(dog.breed)} {dog.breed}{" "}
+                            and is {getAgeText(dog.age)} and resides in{" "}
+                            {data[0]?.city}, {data[0]?.state}.
                         </Typography>
                     </div>
                     <Button onClick={resetMatch} variant="contained">

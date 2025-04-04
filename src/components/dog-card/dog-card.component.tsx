@@ -8,6 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { type FunctionComponent } from "react";
+import { getAgeText } from "../../helpers/general.helpers";
 import { Dog } from "../../types/dog.types";
 import { type Location } from "../../types/location.types";
 
@@ -54,12 +55,7 @@ export const DogCard: FunctionComponent<DogCardProps> = ({
             />
             <CardContent>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                    {dog.name} is{" "}
-                    {dog.age === 0
-                        ? "a puppy!"
-                        : dog.age === 1
-                        ? `${dog.age} year old.`
-                        : `${dog.age} years old.`}
+                    {dog.name} is {getAgeText(dog.age, true)}
                 </Typography>
             </CardContent>
             <CardActions className="flex justify-between">

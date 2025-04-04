@@ -13,7 +13,7 @@ This app has been created for Fetch. Checkout the app live at [https://besto-fiv
 
 ## Responsiveness
 
-The app is fully responsive, here are how it looks in different viewports:
+The app is fully responsive, here is how it looks in different viewports:
 
 Desktop: <br>
 ![desktop view](./src//assets/desktop-screenshot.png)
@@ -24,9 +24,23 @@ Tablet: <br>
 Mobile: <br>
 ![mobile view](./src//assets/mobile-screenshot.png)
 
+## Technologies Used
+
+Besto was created with the following technologies:
+
+-   Node 20
+-   React 19
+-   React Router
+-   React Hook Form
+-   React Intersection Observer
+-   Vite
+-   TypeScript
+-   TailWind
+-   Material UI
+
 ## installation
 
-To run the app locally, clone the repo, then do:
+To run the app locally, clone the repo, then run:
 
 ```
 npm install

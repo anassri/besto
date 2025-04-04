@@ -51,3 +51,19 @@ export const determineErrorsList = (prevState: string[], error: string) => {
         return [...prevState, error];
     }
 };
+
+export const determineIndefiniteArticle = (word: string) => {
+    const firstLetter = word.charAt(0).toLowerCase();
+    const vowels = ["a", "e", "i", "o", "u"];
+    return vowels.includes(firstLetter) ? "an" : "a";
+};
+
+export const getAgeText = (age: number, shouldAddPeriod = false) => {
+    if (age === 0) {
+        return "a puppy!";
+    } else if (age === 1) {
+        return `${age} year old${shouldAddPeriod ? "." : ""}`;
+    } else {
+        return `${age} years old${shouldAddPeriod ? "." : ""}`;
+    }
+};
