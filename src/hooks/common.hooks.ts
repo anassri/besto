@@ -8,7 +8,7 @@ export const useResolveQueryResponse = <T>(
 
     const resolveResponse = async (response: Response) => {
         if (response.status === 401) {
-            setErrors("Unauthorized Access. Please Loging to continue.");
+            setErrors("Unauthorized access. Please login to continue.");
             navigate("/login");
         } else if (response.status === 200) {
             const body = await response.json();
