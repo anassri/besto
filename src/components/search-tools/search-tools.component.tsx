@@ -6,10 +6,10 @@ import {
     useFieldArray,
     useForm,
 } from "react-hook-form";
+import { useInView } from "react-intersection-observer";
 import { shouldDisableActions } from "../../helpers/search.helpers";
 import { useBreakpoints } from "../../hooks/breakpoints.hooks";
 import { DogsSearchAction } from "../../reducers/search.reducers";
-import { ScrollableElement } from "../scrollable-element/scrollable-element.component";
 import { BreedsList } from "./breeds-list.component";
 import { SearchActions } from "./search-actions.component";
 import { SearchSort } from "./search-sort.component";
@@ -27,7 +27,8 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
 }) => {
     const [sort, setSort] = useState<string>("breed:asc");
     const [zipcode, setZipcode] = useState<string>("");
-
+    const { ref: firstItemRef, inView: firstItemInView } = useInView();
+    const { ref: lastItemRef, inView: lastItemInView } = useInView();
     const { control, register, handleSubmit, watch, reset } = useForm({
         defaultValues: {
             ageRange: [0, 15] as [number, number],
@@ -128,18 +129,34 @@ export const SearchTools: FunctionComponent<SearchToolsProps> = ({
                     <Typography gutterBottom fontWeight={700}>
                         Breed
                     </Typography>
-                    <ScrollableElement
-                        Component={({ firstItemRef, lastItemRef }) => (
-                            <BreedsList
-                                loading={loading}
-                                data={data}
-                                selectedBreeds={selectedBreeds}
-                                register={register}
-                                firstItemRef={firstItemRef}
-                                lastItemRef={lastItemRef}
-                            />
+                    <div className="relative">
+                        {!firstItemInView && (
+                            <div
+                                className="absolute w-full h-[50px] top-0"
+                                style={{
+                                    background:
+                                        "linear-gradient(#f7f7f7,rgba(255,255,255, 0))",
+                                }}
+                            ></div>
                         )}
-                    />
+                        <BreedsList
+                            loading={loading}
+                            data={data}
+                            firstItemRef={firstItemRef}
+                            lastItemRef={lastItemRef}
+                            selectedBreeds={selectedBreeds}
+                            register={register}
+                        />
+                        {!lastItemInView && (
+                            <div
+                                className="absolute w-full h-[50px] bottom-0"
+                                style={{
+                                    background:
+                                        "linear-gradient(rgba(255,255,255, 0), #f7f7f7)",
+                                }}
+                            ></div>
+                        )}
+                    </div>
                 </div>
 
                 <ZipcodeInput

@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { type FunctionComponent } from "react";
+import { useInView } from "react-intersection-observer";
 import { Dog } from "../../types/dog.types";
-import { ScrollableElement } from "../scrollable-element/scrollable-element.component";
 import { FavoriteList } from "./favorite-list.component";
 
 type MatchWidgetProps = {
@@ -17,6 +17,8 @@ export const MatchWidget: FunctionComponent<MatchWidgetProps> = ({
     getMatch,
     loading,
 }) => {
+    const { ref: firstItemRef, inView: firstItemInView } = useInView();
+    const { ref: lastItemRef, inView: lastItemInView } = useInView();
     return (
         <section
             className="flex flex-col gap-y-4 bg-[#f7f7f7] p-4 min-w-xs h-fit rounded-lg border border-gray-200 lg:sticky lg:top-4"
@@ -43,17 +45,32 @@ export const MatchWidget: FunctionComponent<MatchWidgetProps> = ({
                     No favorite dogs selected
                 </Typography>
             ) : (
-                <ScrollableElement
-                    Component={({ firstItemRef, lastItemRef }) => (
-                        <FavoriteList
-                            favoriteDogs={favoriteDogs}
-                            setFavoriteDogs={setFavoriteDogs}
-                            firstItemRef={firstItemRef}
-                            lastItemRef={lastItemRef}
-                        />
+                <div className="relative">
+                    {!firstItemInView && favoriteDogs.length > 1 && (
+                        <div
+                            className="absolute w-full h-[50px] top-0"
+                            style={{
+                                background:
+                                    "linear-gradient(#f7f7f7,rgba(255,255,255, 0))",
+                            }}
+                        ></div>
                     )}
-                    hideGradients={favoriteDogs.length <= 1}
-                />
+                    <FavoriteList
+                        favoriteDogs={favoriteDogs}
+                        setFavoriteDogs={setFavoriteDogs}
+                        firstItemRef={firstItemRef}
+                        lastItemRef={lastItemRef}
+                    />
+                    {!lastItemInView && favoriteDogs.length > 1 && (
+                        <div
+                            className="absolute w-full h-[50px] bottom-0"
+                            style={{
+                                background:
+                                    "linear-gradient(rgba(255,255,255, 0), #f7f7f7)",
+                            }}
+                        ></div>
+                    )}
+                </div>
             )}
             <Button
                 variant="contained"
